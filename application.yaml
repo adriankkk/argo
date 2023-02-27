@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nana-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc # domyslny lokalny klaster
+    namespace: argo-apps # tu laduje aplikacja
+
+  syncPolicy:
+    syncOptions: # tworzy automatycznie namespace argo-apps
+    - CreateNamespace=true
+
+    automated: # auto fetch
+      selfHeal: true
+      prune: true
