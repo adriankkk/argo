@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argoApp1
+  name: argo-app1-deployment
 spec:
   selector:
     matchLabels:
-      app: argoApp1
+      app: argo-app1-deployment
   replicas: 2
   template:
     metadata:
       labels:
-        app: argoApp1
+        app: argo-app1-deployment
     spec:
       containers:
-      - name: myapp
+      - name: argo-app1-deployment
         image: nanajanashia/argocd-app:1.2
         ports:
         - containerPort: 8080
