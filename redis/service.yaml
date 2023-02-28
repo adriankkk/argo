@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: busybox-service
+  name: redis-service
 spec:
   selector:
-    app: busybox
+    app: redis
   ports:
   - port: 8080
     protocol: TCP
