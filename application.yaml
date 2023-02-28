@@ -19,6 +19,6 @@ spec:
     syncOptions: # tworzy automatycznie namespace argo-apps
     - CreateNamespace=true
 
-    automated: # auto fetch ###
+    automated: # auto fetch
       selfHeal: true
       prune: true
