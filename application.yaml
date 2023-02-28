@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nana
+  name: nana-app-name
   namespace: argocd
 spec:
-  project: podstawowy-projekt-application
+  project: nana
 
   source:
     # repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
