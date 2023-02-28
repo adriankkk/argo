@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox-deployment
+  name: redis-deployment
 spec:
   selector:
     matchLabels:
-      app: busybox
+      app: redis
   replicas: 3
   template:
     metadata:
       labels:
-        app: busybox
+        app: redis
     spec:
       containers:
-      - name: busybox
-        image: docker.io/library/hello-world:latest
+      - name: redis
+        image: docker.io/library/redis:latest
         ports:
         - containerPort: 8080

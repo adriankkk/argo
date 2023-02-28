@@ -10,7 +10,7 @@ spec:
     # repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
     repoURL: https://github.com/adriankkk/argo.git
     targetRevision: HEAD
-    path: busybox
+    path: redis
   destination:
     server: https://kubernetes.default.svc # domyslny lokalny klaster
     namespace: argo-apps # tu laduje aplikacja
