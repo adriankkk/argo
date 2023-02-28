@@ -23,3 +23,4 @@ spec:
     # alternatyma to WEBHOOK gitrepo <> argocd
       selfHeal: true # if changes to cluster are manually, argo will revert them and sync with actuall repository
       prune: true # if in repo yaml are removed, argo will remove this component in cluster as well
+     ##
