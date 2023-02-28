@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nana-argo-application
+  name: nana
   namespace: argocd
 spec:
   project: podstawowy-projekt-application
