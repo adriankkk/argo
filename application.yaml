@@ -4,7 +4,7 @@ metadata:
   name: nana-argo-application
   namespace: argocd
 spec:
-  project: default
+  project: podstawowy-projekt-application
 
   source:
     # repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
