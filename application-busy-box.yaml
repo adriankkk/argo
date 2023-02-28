@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: busybox
+  namespace: argocd
+spec:
+  project: nana
+
+  source:
+    # repoURL: https://gitlab.com/nanuchi/argocd-app-config.git
+    repoURL: https://github.com/adriankkk/argo.git
+    targetRevision: HEAD
+    path: busybox
+  destination:
+    server: https://kubernetes.default.svc # domyslny lokalny klaster
+    namespace: argo-apps # tu laduje aplikacja
+
+  syncPolicy:
+    syncOptions: # tworzy automatycznie namespace argo-apps
+    - CreateNamespace=true
+
+    automated: # automaticly sync any changes to git repository | every 3min !
+    # alternatyma to WEBHOOK gitrepo <> argocd
+      selfHeal: true # if changes to cluster are manually, argo will revert them and sync with actuall repository
+      prune: true # if in repo yaml are removed, argo will remove this component in cluster as well
