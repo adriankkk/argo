@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argo-app2-deployment
+  name: nana-deployment
 spec:
   selector:
     matchLabels:
